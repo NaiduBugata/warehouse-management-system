@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="css/inventory.css">
+    <script defer src="js/inventory.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Inventory</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="sales.html">Sales</a></li>
+            <li><a href="purchases.html">Purchases</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <input type="text" id="searchInventory" placeholder="Search Inventory..." oninput="searchItems()">
+        <h2>Inventory Management</h2>
+        <div class="form-container">
+            <input type="text" id="itemName" placeholder="Item Name">
+            <input type="text" id="category" placeholder="Category">
+            <input type="number" id="quantity" placeholder="Quantity">
+            <input type="number" id="price" placeholder="Price">
+            <input type="file" id="imageUpload" accept="image/*">
+            <button id="addItemBtn">Add Item</button>  <!-- Add Button Right After File Input -->
+        </div>
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Item Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Items will be added here dynamically -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

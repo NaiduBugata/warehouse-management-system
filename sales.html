@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Management</title>
+    <link rel="stylesheet" href="css/sales.css">
+    <script defer src="js/sales.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Sales</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li class="active"><a href="sales.html">Sales</a></li>
+            <li><a href="purchases.html">Purchases</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Sales Management</h2>
+        <div class="form-container">
+            <select id="productSelect" onchange="fillProductDetails()">
+                <option value="">Select Product</option>
+                <!-- Options will be added dynamically from inventory -->
+            </select>
+            <input type="number" id="quantity" placeholder="Quantity" oninput="calculateTotal()">
+            <input type="number" id="price" placeholder="Price" readonly>
+            <input type="number" id="totalPrice" placeholder="Total Price" readonly>
+            <button id="addSaleBtn">Add Sale</button>
+        </div>
+        <table id="salesTable">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sales records will be added dynamically -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Management</title>
+    <link rel="stylesheet" href="css/purchases.css">
+    <script defer src="js/purchases.js"></script>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Warehouse</h2>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="sales.html">Sales</a></li>
+            <li class="active"><a href="purchases.html">Purchases</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Purchase Management</h2>
+
+        <input type="text" id="searchPurchases" placeholder="Search Purchases..." oninput="searchPurchases()">
+
+        <div class="form-container">
+            <input type="text" id="supplierName" placeholder="Supplier Name">
+            <input type="text" id="itemName" placeholder="Item Name">
+            <input type="number" id="quantity" placeholder="Quantity">
+            <input type="number" id="price" placeholder="Price">
+            <input type="date" id="purchaseDate">
+            <button id="addPurchaseBtn">Add Purchase</button>
+        </div>
+
+        <table id="purchasesTable">
+            <thead>
+                <tr>
+                    <th>Supplier</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Purchase Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Purchases will be added dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

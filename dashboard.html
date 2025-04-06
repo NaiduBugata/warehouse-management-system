@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Dashboard</title>
+    <link rel="stylesheet" href="css/dashstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Warehouse</h2>
+        <ul>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="sales.html">Sales</a></li>
+            <li><a href="purchases.html">Purchases</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header>
+            <h1>Welcome, User!</h1>
+
+            <!-- 📌 Perfectly Placed Location Selector -->
+            <div class="location-container">
+                <label for="state">State:</label>
+                <select id="state" onchange="populateDistricts()">
+                    <option value="">-- Select State --</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+
+                <label for="district">District:</label>
+                <select id="district">
+                    <option value="">-- Select District --</option>
+                </select>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="card"><h3>Total Inventory</h3><p id="totalInventory">Loading...</p></div>
+            <div class="card"><h3>Total Sales</h3><p id="totalSales">Loading...</p></div>
+            <div class="card"><h3>Pending Orders</h3><p id="pendingOrders">Loading...</p></div>
+            <div class="card"><h3>Stock Alerts</h3><p id="stockAlerts">Loading...</p></div>
+        </section>
+
+        <section class="chart-container">
+            <h2>Sales Performance</h2>
+            <canvas id="salesChart"></canvas>
+        </section>
+
+        <section class="bar-graph-section">
+            <h2>Bar Graph by Year</h2>
+
+            <div class="input-section">
+                <input type="number" id="yearInput" placeholder="Enter Year" />
+                <button id="showButton">Show Graph</button>
+            </div>
+
+            <h3 id="graphTitle"></h3>
+            <div id="message"></div>
+
+            <div class="bar-chart" id="barChart"></div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/dashboard.js"></script>
+    <script src="js/location.js"></script>
+</body>
+</html>
